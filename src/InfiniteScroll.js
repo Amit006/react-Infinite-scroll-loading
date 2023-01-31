@@ -1,6 +1,6 @@
 // InfiniteScroll.js
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useInfiniteQuery } from 'react-query';
 import Users from './Users';
 
@@ -35,10 +35,8 @@ const InfiniteScroll = () => {
   }
 
   const handleScroll = (e) => {
-    console.log(' ---- trigger callback ----', isFetching, !isFetchingNextPage);
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
       //your code here
-      console.log(' ---- trigger inside ----', isFetching, !isFetchingNextPage);
       window.removeEventListener('scroll', handleScroll);
       !isFetching && fetchNextPage();
     }

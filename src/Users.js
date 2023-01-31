@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Users = ({ user }) => {
-  // console.log(' id: ', user.id);
   return (
     <div className="card-detail">
       <img src={user.picture.large} />
